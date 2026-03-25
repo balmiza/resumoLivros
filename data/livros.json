@@ -5,7 +5,7 @@
     "autor": "Charles Duhigg",
     "ano_leitura": 2024,
     "categoria": "Autodesenvolvimento",
-    "capa": "https://covers.openlibrary.org/b/id/8739161-L.jpg",
+    "capa": "livros/o-poder-do-habito/capa.jpg",
     "resumo": "livros/o-poder-do-habito/resumo.md"
   },
   {
@@ -14,7 +14,7 @@
     "autor": "Yuval Noah Harari",
     "ano_leitura": 2024,
     "categoria": "História",
-    "capa": "https://covers.openlibrary.org/b/id/8739243-L.jpg",
+    "capa": "livros/sapiens/capa.jpg",
     "resumo": "livros/sapiens/resumo.md"
   },
   {
@@ -23,7 +23,7 @@
     "autor": "Benjamin Graham",
     "ano_leitura": 2023,
     "categoria": "Finanças",
-    "capa": "https://covers.openlibrary.org/b/id/8231992-L.jpg",
+    "capa": "livros/o-investidor-inteligente/capa.jpg",
     "resumo": "livros/o-investidor-inteligente/resumo.md"
   }
 ]
