@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resumo de Livros</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h1 class="site-title">📚 Meus Livros</h1>
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input
+            type="text"
+            id="search"
+            class="search-input"
+            placeholder="Pesquisar livro ou autor..."
+            autocomplete="off"
+          />
+        </div>
+      </div>
+
+      <ul class="book-list" id="book-list">
+        <!-- preenchido via JS -->
+      </ul>
+
+      <p class="no-results hidden" id="no-results">Nenhum livro encontrado.</p>
+    </aside>
+
+    <!-- PAINEL PRINCIPAL -->
+    <main class="main-panel" id="main-panel">
+      <div class="welcome" id="welcome">
+        <div class="welcome-icon">📖</div>
+        <h2>Bem-vindo ao meu acervo</h2>
+        <p>Selecione um livro na lista ao lado para ler o resumo.</p>
+      </div>
+
+      <article class="book-detail hidden" id="book-detail">
+        <div class="book-detail-header">
+          <img class="book-cover-large" id="detail-cover" src="" alt="" />
+          <div class="book-meta">
+            <h2 class="book-title" id="detail-title"></h2>
+            <p class="book-author" id="detail-author"></p>
+            <div class="book-tags">
+              <span class="tag" id="detail-categoria"></span>
+              <span class="tag" id="detail-ano"></span>
+            </div>
+          </div>
+        </div>
+        <hr class="divider" />
+        <div class="book-content" id="detail-content">
+          <!-- resumo em markdown renderizado aqui -->
+        </div>
+      </article>
+    </main>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

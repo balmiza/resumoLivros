@@ -21,13 +21,11 @@ Site estático pessoal para publicar resumos dos livros lidos. O objetivo é ter
 
 ```
 resumoLivros/
-├── index.html              # Página inicial — lista de livros
-├── livro.html              # Template de página individual do livro
+├── index.html              # Única página — layout com sidebar + painel de resumo
 ├── css/
-│   └── style.css           # Estilos globais
+│   └── style.css           # Estilos globais (dark mode)
 ├── js/
-│   ├── main.js             # Lógica da lista de livros
-│   └── livro.js            # Lógica da página individual
+│   └── main.js             # Lógica: carregar lista, pesquisa, renderizar resumo
 ├── livros/
 │   └── [slug-do-livro]/
 │       ├── resumo.md       # Resumo em Markdown
@@ -70,19 +68,41 @@ Cada livro é representado por um objeto com os seguintes campos:
 
 ---
 
+## Layout
+
+```
+┌─────────────────┬──────────────────────────────────────────┐
+│   SIDEBAR       │   PAINEL DE RESUMO                       │
+│                 │                                          │
+│  [Pesquisa 🔍]  │   [Capa grande]                          │
+│  ─────────────  │   Título do Livro                        │
+│  [img] Livro 1  │   Autor · Categoria · Ano                │
+│  [img] Livro 2  │   ──────────────────────────             │
+│  [img] Livro 3  │   Conteúdo do resumo em Markdown...      │
+│  [img] Livro 4  │                                          │
+│                 │                                          │
+└─────────────────┴──────────────────────────────────────────┘
+```
+
+- **Single page**: tudo acontece em `index.html` sem navegação entre páginas
+- **Sidebar fixa** à esquerda, painel de resumo ocupa o restante da tela
+- Em mobile: sidebar vira menu colapsável (hamburguer)
+
+---
+
 ## Funcionalidades
 
-### Página Inicial (`index.html`)
-- Grid responsivo com os livros lidos
-- Cada card exibe: capa, título, autor e categoria
-- Cards clicáveis que navegam para a página individual do livro
+### Sidebar
+- Lista de livros com miniatura da capa e título
+- Barra de pesquisa filtra a lista em tempo real por título ou autor
 - Ordenação padrão: mais recente primeiro (por `ano_leitura`)
+- Item selecionado fica destacado visualmente
 
-### Página Individual (`livro.html?slug=<slug>`)
-- Lê o `slug` da query string da URL
-- Busca os metadados em `livros.json`
-- Faz fetch e renderiza o Markdown do resumo como HTML
-- Exibe: capa, título, autor, categoria e o texto do resumo
+### Painel de Resumo
+- Ao clicar num livro da sidebar, carrega o resumo no painel direito
+- Exibe: capa, título, autor, categoria, ano de leitura e texto do resumo
+- Resumo renderizado a partir do Markdown via marked.js
+- Estado inicial: tela de boas-vindas (nenhum livro selecionado)
 
 ---
 
@@ -113,7 +133,7 @@ O conteúdo dos resumos é escrito em Markdown e renderizado no browser via a bi
 
 ## Design
 
-- Layout: responsivo (mobile-first)
+- Tema: **dark mode** (fundo escuro, texto claro)
+- Layout: responsivo — sidebar fixa no desktop, colapsável no mobile
 - Fonte: sistema (`system-ui`)
-- Tema: claro, limpo e minimalista
-- Grid de livros: 2 colunas em mobile, 3-4 em desktop
+- Paleta base: `#0f0f0f` fundo, `#1a1a1a` sidebar, `#e0e0e0` texto, acento em tom de laranja/âmbar para item selecionado
