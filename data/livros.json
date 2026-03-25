@@ -1,0 +1,29 @@
+[
+  {
+    "slug": "o-poder-do-habito",
+    "titulo": "O Poder do Hábito",
+    "autor": "Charles Duhigg",
+    "ano_leitura": 2024,
+    "categoria": "Autodesenvolvimento",
+    "capa": "https://covers.openlibrary.org/b/id/8739161-L.jpg",
+    "resumo": "livros/o-poder-do-habito/resumo.md"
+  },
+  {
+    "slug": "sapiens",
+    "titulo": "Sapiens",
+    "autor": "Yuval Noah Harari",
+    "ano_leitura": 2024,
+    "categoria": "História",
+    "capa": "https://covers.openlibrary.org/b/id/8739243-L.jpg",
+    "resumo": "livros/sapiens/resumo.md"
+  },
+  {
+    "slug": "o-investidor-inteligente",
+    "titulo": "O Investidor Inteligente",
+    "autor": "Benjamin Graham",
+    "ano_leitura": 2023,
+    "categoria": "Finanças",
+    "capa": "https://covers.openlibrary.org/b/id/8231992-L.jpg",
+    "resumo": "livros/o-investidor-inteligente/resumo.md"
+  }
+]
